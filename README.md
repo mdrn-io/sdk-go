@@ -2,7 +2,7 @@
 
 `github.com/mdrn-io/sdk-go` (package `mdrn`) is the client for the products a deployed MDRN app
 has (Database, Files, Mail) and for who is calling it (Auth), for Go 1.23+. It needs only the
-standard library. The same surface exists for [JavaScript, Python and Rust](../README.md).
+standard library. The same surface exists for [JavaScript, Python and Rust](https://mdrn.io/docs/sdk/).
 
 ## Install
 
@@ -182,7 +182,7 @@ if errors.As(err, &e) && e.Code == "CONFLICT" {
 
 ## Testing
 
-The SDK has no fake of its own: the JavaScript SDK's `@mdrn/sdk/fake` is the in-memory MDRN all
+The SDK has no fake of its own: the JavaScript SDK's `@mdrnio/sdk/fake` is the in-memory MDRN all
 four languages test against, and `sdk/conformance/server.mjs` serves it over HTTP on this
 machine. With Node.js present, `go test ./...` starts it for the conformance scenarios and for
 [`examples/roundtrip`](examples/roundtrip/main.go), a program that uses most of the SDK (run it
@@ -194,8 +194,15 @@ your own that answers what a test needs.
 
 ## Versions
 
-`0.3.0` (`mdrn.Version`), shared with the other languages (`sdk/VERSION`, `sdk/CHANGELOG.md`).
+`0.3.1` (`mdrn.Version`), shared with the other languages (`sdk/VERSION`, `sdk/CHANGELOG.md`).
 All four SDKs produce the same transcript against the same scenarios: `sdk/conformance/`, where
 `go run ./conformance` is the Go runner. The module is published by
 `.github/workflows/publish-tools.yml`: this directory is pushed to `github.com/mdrn-io/sdk-go`
-and tagged `v0.3.0`, which `proxy.golang.org` serves.
+and tagged `v0.3.1`, which `proxy.golang.org` serves.
+
+## Contributing
+
+This repository is a mirror: the code is published here from MDRN's main repository on every
+release, where it is tested against the API contract together with the other SDKs. Issues are
+welcome here. Pull requests are reviewed here and merged in the main repository, from where the
+next release brings them back.

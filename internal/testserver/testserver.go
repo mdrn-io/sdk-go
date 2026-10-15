@@ -1,5 +1,5 @@
 // Package testserver starts the SDK conformance server (sdk/conformance/server.mjs, the fake
-// MDRN of @mdrn/sdk/fake behind node:http) for a test, and gives its origin. The server is
+// MDRN of @mdrnio/sdk/fake behind node:http) for a test, and gives its origin. The server is
 // part of the monorepo, not of the published module: a test that needs it is skipped where
 // the file or node is missing.
 package testserver
